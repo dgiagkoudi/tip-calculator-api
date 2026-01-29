@@ -1,0 +1,10 @@
+@TipCalculatorAPI_HostAddress = http://localhost:5048
+
+POST {{TipCalculatorAPI_HostAddress}}/api/tip/calculate
+Content-Type: application/json
+
+{
+  "billAmount": 100,
+  "tipPercentage": 10,
+  "numberOfPeople": 2
+}
