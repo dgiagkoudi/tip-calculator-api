@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 // Dependency Injection
 builder.Services.AddScoped<ITipCalculatorService, TipCalculatorService>();
 
-// CORS (για Vercel)
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
@@ -27,13 +27,12 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Middleware
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+// Optional for Render
+// app.UseHttpsRedirection();
+
 app.UseCors("AllowAngularApp");
 app.UseAuthorization();
 
