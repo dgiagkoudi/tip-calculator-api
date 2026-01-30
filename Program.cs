@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngularApp", policy =>
     {
         policy
-            .WithOrigins("https://angular-tip-calculator.vercel.app")
+            .WithOrigins("https://angular-tip-calculator.vercel.app", "http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
